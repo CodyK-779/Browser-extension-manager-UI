@@ -1,10 +1,10 @@
 import { useState } from "react";
-import toolsData from "../../data.json";
+import { extensions } from "../../data";
 import { useGlobalContext } from "../context/globalContext";
 
 const ExtensionList = () => {
   const { darktheme, activeFilter } = useGlobalContext();
-  const [tools, setTools] = useState(toolsData);
+  const [tools, setTools] = useState(extensions);
 
   const filteredTools = tools.filter((tool) => {
     if (activeFilter === "All") return true;
